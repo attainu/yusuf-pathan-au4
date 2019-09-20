@@ -1,8 +1,6 @@
 .main-container{
     border: 1px solid;
-        width: 70%;
     display: block;
-    margin: 63px 0px 0px 110px;
     background-color: #f5f5f5;
 }
 
@@ -21,8 +19,7 @@
 
 .link-contents{
     float: right;
-    margin-right: 110px;
-    margin-top: 30px;
+    margin: 23px 155px 0px 77px;
     border: 1px solid;
     border-color:#22419066;
 }
@@ -47,8 +44,8 @@ h3 {
 
 .ad{
     border: 3px solid;
-    margin: 22px 106px 22px 131px;
-    border-color:#22419066;
+    margin: 59px 197px 0px 214px;
+    border-color: #22419066;
 }
 
 h1{
@@ -57,6 +54,7 @@ h1{
 
 .content-body{
     background-color: #ffffff;
+    padding-bottom: 161px;
 }
 
 .Table
