@@ -1,5 +1,8 @@
-for (var i = 100; i > 0; i--) {
-    if (i % 2 === 0) {
-        console.log(i);
-    }
+function even(){
+	for(var a = 100; a > 0; a--){
+		if(a % 2 === 0){
+			console.log(a);
+		}
+	}
 }
+even();
