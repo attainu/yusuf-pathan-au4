@@ -5,7 +5,9 @@ function search(ar=[],value){
       //for loop for finding the value inside the array
       for(i = 0; i < ar.length; i++){
         if(ar[i] === value){
-          return value+' is there in array at position '+i;
+            var str = value+' is there in array at position '+i;
+            console.log(str);
+
         }
         count += 1;
       }
@@ -19,4 +21,4 @@ function search(ar=[],value){
       // var str = ar.indexOf(value);
       // console.log(str);
     }
-    search(ar=['yusuf','pathan','city'],'city');
+    search(ar=['yusuf','pathan','city','yusuf'],'yusuf');
