@@ -5,7 +5,7 @@ function search(ar=[],value){
       //for loop for finding the value inside the array
       for(i = 0; i < ar.length; i++){
         if(ar[i] === value){
-            var str = value+' is there in array at position '+i;
+            var str = value+' is there in array at index position '+i;
             console.log(str);
 
         }
