@@ -1,0 +1,11 @@
+.container{
+    border: 2px solid;
+    border-color: blue;
+    background-color:#9e9e9e5c;
+    text-align: center; 
+}
+button{
+    margin-left:11rem !important;
+    margin-top:17px !important;
+    margin-bottom:69px !important;  
+}

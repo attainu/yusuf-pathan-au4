@@ -1,0 +1,24 @@
+.container{
+    border: 10px solid;
+    border-color: #b8bfce;
+    background-color: #809de0;
+    border-radius: 0.3rem;
+}
+h1{
+    color: #ffffff;
+    font-size: 2.3rem;
+    font-weight: 700 !important;
+}
+.btn{
+    background-color: #b8bfce !important;
+}
+.btn-lg{
+    padding: .5rem 1rem !important;
+    font-size: 2.25rem !important;
+    line-height: 1.5 !important;
+    border-radius: 0.3rem !important;
+}
+.form-control{
+    font-weight: 700 !important;
+    font-size: 1.4rem !important;
+}
