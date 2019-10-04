@@ -1,20 +1,28 @@
-$(document).ready(function() {
+var ar=[];
     $.ajax({
         method:"GET",
         url:"cities.json",
-        success:function(response) {
-                var value = 'a';
-                var ar = [];
-                    for(var i = 0; i < response.length; i++){
-                    var city = (response[i].name);
-                    if(city.charAt(0).toLowerCase() === value){
-                        ar.push(city);
-                    }
-                }
-                console.log(ar);
+        datatype:'json',
+        success:function(data) {
+                // var data = JSON.parse(data);
+                //console.log(data);
+            for(var i=0;i<data.length;i++){
+            ar.push(data[i]);
+            }
         },
         error:function(error) {
             console.log(error);
         }    
     });
+// console.log(ar);
+// $('<p/>').text(ar[1]).appendTo('.row');
+$('#check').on('click',function() {    
+    var value = $('#letter').val();
+    $('ul').html("");
+        for(var i = 0; i < ar.length; i++){
+        var city = (ar[i].name);
+        if(city.charAt(0).toLowerCase() == value){
+            $('ul').append('<li class="list-group-item">'+city+'</li>')
+        }
+    }
 });
