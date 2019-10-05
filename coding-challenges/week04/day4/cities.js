@@ -1,10 +1,10 @@
 var ar=[];
     $.ajax({
         method:"GET",
-        url:"cities.json",
+        url:"https://raw.githubusercontent.com/attainu/attainu-eagle/master/coding-challenges/week-4/day-4/cities.json",
         datatype:'json',
         success:function(data) {
-                // var data = JSON.parse(data);
+            var data = JSON.parse(data);
                 //console.log(data);
             for(var i=0;i<data.length;i++){
             ar.push(data[i]);
@@ -25,4 +25,5 @@ $('#check').on('click',function() {
             $('ul').append('<li class="list-group-item">'+city+'</li>')
         }
     }
+
 });
