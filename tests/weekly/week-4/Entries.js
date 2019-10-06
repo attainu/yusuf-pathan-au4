@@ -1,4 +1,5 @@
 $('.alert').hide();
+$('table').hide();
 $(document).ready(function () {
     var ar = [];
     $('.btn').on('click',function () {
@@ -7,19 +8,24 @@ $(document).ready(function () {
         var age = parseInt($('#age').val());
         
         if (name == '' || name == null){
-            $('.alert').text("enter a valid value").show();
+            $('.alert').removeClass().addClass("alert alert-warning").text("Please enter a value").show();
             return;
         }
 
-        if(isNaN(age) || age < 15){
-            $('.alert').text("enter a value").show();
+        if(isNaN(age)){
+            $('.alert').removeClass().addClass("alert alert-warning").text("Please enter some age").show();
+            return;
+        }
+
+        if(age<15){
+            $('.alert').removeClass().addClass("alert alert-warning").text("Sorry your data cannot be added").show();
             return;
         }
 
         if(ar.length > 0){
             for(var i = 0; i < ar.length; i++){
                 if(ar[i].name === name){
-                    $('.alert').text("Value already exists").show();
+                    $('.alert').removeClass().addClass("alert alert-warning").text("Value already exists").show();
                     return;
                 }
             }
@@ -35,9 +41,11 @@ $(document).ready(function () {
         // array[0].name="yus";
         // console.log(array[0].name);
         // console.log(array);
-        $('ul').html("");
+        $('table').show();
+        $('tbody').html("");
         for(var i = 0; i < ar.length; i++){
-            $('ul').append('<li class="list-group-item">Name:<strong>'+ar[i].name+'</strong>  Age:<i>'+ar[i].age+'</i></li>');
+            $('tbody').append('<tr><td><strong>'+ar[i].name+'</strong></td><td><i>'+ar[i].age+'</i></td></tr>');
         }
+        $('.alert').removeClass().addClass("alert alert-success").text("Value added successfully").show();
     });
 });
