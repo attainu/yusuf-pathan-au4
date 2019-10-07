@@ -1,8 +1,9 @@
 $(document).ready(function() {
     $.ajax({
         method:"GET",
-        url:"quiz.json",
+        url:"https://raw.githubusercontent.com/attainu/attainu-eagle/master/assignments/week-4/day-4/quiz.json",
         success:function(response) {
+            var response = JSON.parse(response);
             var randomNumber = Math.floor( Math.random() * 10 );
             var ques = response[randomNumber].question;
             var ans = response[randomNumber].answer;
