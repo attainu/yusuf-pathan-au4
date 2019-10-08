@@ -3,11 +3,12 @@ $(document).ready(function() {
 
     $.ajax({
         method:"GET",
-        url:"currency.json",
+        url:"https://raw.githubusercontent.com/attainu/yusuf-pathan-au4/dev/assignments/week05/day1/currency.json?token=AM7EHSKCAXCUGIPRIHSQIBS5UYSBK",
         success:function(data) {
-            var data = data.rates;
-			console.log(data);
-			for(var x in data){
+			var data = JSON.parse(data);
+            var data1 = data.rates;
+			console.log(data1);
+			for(var x in data1){
 				$('select').append('<option value = '+x+'>'+x+'</option>');
 				// $('.currency-two').append('<option value = '+x+'>'+x+'</option>');
 			}
