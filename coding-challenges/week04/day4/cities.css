@@ -1,0 +1,12 @@
+.card{
+    width: 40rem;
+    min-height: 100vh;
+}
+
+.col{
+    width: 30rem;
+}
+
+.form-control{
+    width: 30rem;
+}
