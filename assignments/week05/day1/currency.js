@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     $.ajax({
         method:"GET",
-        url:"https://raw.githubusercontent.com/attainu/yusuf-pathan-au4/dev/assignments/week05/day1/currency.json?token=AM7EHSKJGXRCJQU7TED6JTS5UYRCQ",
+        url:"currency.json",
         success:function(data) {
             var data = data.rates;
 			console.log(data);
