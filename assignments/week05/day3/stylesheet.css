@@ -1,0 +1,18 @@
+.container{
+    max-width: 60vw;
+    background-color:#000000;
+}
+img{
+    cursor: pointer;
+}
+body{
+    background-color: darkgray;
+}
+.display-3{
+    font-size: 5.5rem;
+    font-weight: 700;
+    color:#ffffff;
+}
+body{
+    background-image: url("images.jpg");
+}

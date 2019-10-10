@@ -1,0 +1,17 @@
+.container{
+    margin-left: 2%;
+}
+.display-3{
+    font-size: 3rem;
+    font-weight: 450;
+    background-color:#ffffff;
+    color: #000000;
+}
+body{
+    background-image: url("books.jpg");
+    
+}
+label{
+    background-color:#ffffff;
+    color: #000000;
+}
