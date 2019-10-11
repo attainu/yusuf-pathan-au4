@@ -21,4 +21,4 @@ function hammington(string1,string2){
     }
 }
 
-hammington(yusuf,kasif);
+hammington('yusuf','kasif');
