@@ -31,6 +31,7 @@ function Battleground(username,weapon,level){
     console.log('present username, weapon and level are',username,this.weapon,this.level);
 }
 
+// if username wanna change weapon
 Battleground.prototype.changeWeapon = function() {
     var select = prompt('What weapon you wanna upgrade to');
     if(select === '' ){
@@ -45,6 +46,7 @@ Battleground.prototype.changeWeapon = function() {
     }
 }
 
+// if username wanna change level
 Battleground.prototype.changeLevel = function() {
     var select = prompt('What level you wanna upgrade to');
     if(select === ''){
@@ -64,6 +66,7 @@ Battleground.prototype.attack = function() {
     console.log("Attacking the opponent with",this.weapon);
 }
 
+// invoking the main function and calling all prototypes
 var game = new Battleground('yusuf');
 game.changeWeapon();
 game.changeLevel();
