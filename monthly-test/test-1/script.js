@@ -19,20 +19,23 @@ $(document).ready(function() {
 
             var ar=[];
             $('#Salary').on('click',function () {
-                $('tbody').remove();
+                $('tbody').html("");
                 for(i = 0; i < data.users.length; i++){
                     ar.push(data.users[i].salary);
                 }
-                var sorted = ar.sort();
+                var sorted = ar.sort(function(a, b){
+                    return b-a;
+                });
                 console.log(sorted);
-                for(var i = 38; i >= 0; i--){
-                    for(j = 0; j < data.users.length; j++){
-                        if(ar[i] == data.users[j].salary){
-                            $('tbody').append('<tr> <td>' + i + '</td> <td>' + data.users[j].name + '</td> <td>' + data.users[j].email + '</td> <td>' + data.users[j].country + '</td> <td>' + data.users[j].salary + '</td> <td> <button class = "btn btn-danger">Delete</button> </td> <tr>');
+                for(var i = 0; i < sorted.length; i++){
+                    for(var j = 0; j < sorted.length; j++){
+                        if(sorted[i] === data.users[j].salary){
+                            console.log(data.users[j].salary)
+                            $('tbody').append('<tr> <td>' + (i+1) + '</td> <td>' + data.users[j].name + '</td> <td>' + data.users[j].email + '</td> <td>' + data.users[j].country + '</td> <td>' + data.users[j].salary + '</td> <td> <button class = "btn btn-danger">Delete</button> </td> <tr>');
                         }
                     }
                 }
-            })
+            });
 
             $('.btn').on('click',function () {
                 $(this).closest('tr').remove();
