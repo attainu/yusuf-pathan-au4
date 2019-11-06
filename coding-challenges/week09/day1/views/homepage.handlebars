@@ -1,0 +1,46 @@
+<form onsubmit="false" method="GET">
+    <div class="container mt-3 mx-1">
+        <div class="row mt-3 d-flex ml-3">
+            <h1 class="display-3 p-1">Book Library</h2>
+        </div>
+        <div class="row mt-1 d-flex ml-3">
+            <div class="form-group">
+                <label for="input" class="p-1">Enter language here</label>
+                <input type="text" name="language" class="form-control" id="input">
+            </div>
+        </div>
+        <div class="row mt-1 d-flex ml-3">
+            <input type="submit" value="submit" class="btn btn-primary" id="search">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 ml-5">
+                <div id="data" class="mt-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Country</th>
+                            <th>Language</th>
+                            <th>Link</th>
+                            <th>Pages</th>
+                            <th>Year</th>
+                        </thead>
+                        <tbody id="tbody">
+                            {{#each result}}
+                            <tr>
+                                <td>{{this.title}}</td>
+                                <td>{{this.author}}</td>
+                                <td>{{this.country}}</td>
+                                <td>{{this.language}}</td>
+                                <td>{{this.link}}</td>
+                                <td>{{this.pages}}</td>
+                                <td>{{this.year}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
