@@ -1,0 +1,19 @@
+indexOf:-
+Time complexity is O(n), because we have to traverse through each element of an array to find 
+that particular element's index;
+
+push and pop :-
+Time complexity is O(1), because we are just adding a single element and removing a single element 
+from the array's end. So it doesn't affect any other operations.
+
+shift:-
+Time complexity is O(n), because we are removing the element from the starting of the array so then 
+each element has to shift its position one index back.
+
+splice:-
+Time complexity is O(n), because in the worst case we might add or remove the element from the front
+of the array and it will affect the whole array to shift the positions of the element.
+
+concat:-
+Time complexity is O(n + m), because this operation joins elements of two arrays, therefore the 
+time complexity depends on lengths of both arrays. 
