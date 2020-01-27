@@ -27,4 +27,4 @@ movezeros.moveZeros(array);
 
 // Time and Space complexity
 // Time complexity = O(n);
-// Space complexity = O(n)
+// Space complexity = O(1)
