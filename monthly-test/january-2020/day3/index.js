@@ -160,7 +160,7 @@ let ll1 = linkedList1.head;
 let ll2 = linkedList2.head;
 let solution = new Solution().mergeTwoLists(ll1, ll2);
 console.log(solution);
-solution.print();
+linkedList1.print();
 
 // let finallist = solution
 // let printList = () =>  
