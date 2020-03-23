@@ -15,9 +15,5 @@ ReactDOM.render(
     </div>,
     rootElement);
 
- var aa = 10; 
- sayhello (name) {
-     
- }
 
 // To render variable in jsx syntax we have to use {}
