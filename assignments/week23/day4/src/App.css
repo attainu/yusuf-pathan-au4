@@ -1,0 +1,6 @@
+.users,.products,.orders{
+border: 1px solid black;
+background-color: lightcyan;
+margin-top: 3%;
+color: darkblue;
+}

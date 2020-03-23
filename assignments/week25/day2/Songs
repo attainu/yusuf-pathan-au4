@@ -1,0 +1,123 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.2
+-- Dumped by pg_dump version 12.2
+
+-- Started on 2020-03-16 22:08:10
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 203 (class 1259 OID 16403)
+-- Name: singer; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.singer (
+    song_name text,
+    singer_name text NOT NULL,
+    singer_age integer,
+    awards text[],
+    experience integer,
+    gender text,
+    classically_trained boolean,
+    native_language text
+);
+
+
+ALTER TABLE public.singer OWNER TO postgres;
+
+--
+-- TOC entry 202 (class 1259 OID 16395)
+-- Name: song; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.song (
+    song_name text NOT NULL,
+    song_length numeric,
+    release_year integer,
+    awards text[],
+    movie_name text,
+    genre text,
+    singer_name text
+);
+
+
+ALTER TABLE public.song OWNER TO postgres;
+
+--
+-- TOC entry 2824 (class 0 OID 16403)
+-- Dependencies: 203
+-- Data for Name: singer; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.singer (song_name, singer_name, singer_age, awards, experience, gender, classically_trained, native_language) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2823 (class 0 OID 16395)
+-- Dependencies: 202
+-- Data for Name: song; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.song (song_name, song_length, release_year, awards, movie_name, genre, singer_name) FROM stdin;
+\.
+
+
+--
+-- TOC entry 2694 (class 2606 OID 16410)
+-- Name: singer singer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.singer
+    ADD CONSTRAINT singer_pkey PRIMARY KEY (singer_name);
+
+
+--
+-- TOC entry 2692 (class 2606 OID 16402)
+-- Name: song song_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.song
+    ADD CONSTRAINT song_pkey PRIMARY KEY (song_name);
+
+
+--
+-- TOC entry 2696 (class 2606 OID 16411)
+-- Name: singer singer_song_name_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.singer
+    ADD CONSTRAINT singer_song_name_fkey FOREIGN KEY (song_name) REFERENCES public.song(song_name);
+
+
+--
+-- TOC entry 2695 (class 2606 OID 16416)
+-- Name: song song_singer_name_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.song
+    ADD CONSTRAINT song_singer_name_fkey FOREIGN KEY (singer_name) REFERENCES public.singer(singer_name);
+
+
+-- Completed on 2020-03-16 22:08:13
+
+--
+-- PostgreSQL database dump complete
+--
+
