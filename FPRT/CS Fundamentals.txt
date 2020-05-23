@@ -1,0 +1,177 @@
+1. What is Multithreading and asynchronous programming?
+    Multithreading means many individual threads of programming are running at the same time. In computer architecture, multithreading is the ability of a central processing unit (CPU) or a single core in a multi-core processor to execute multiple processes or threads concurrently, appropriately supported by the operating system.
+
+    Asynchronous programming is a type of parallel programming in which a unit of work is allowed to run separately from the primary application thread. When the work is complete, it notifies the main thread about completion or failure of the worker thread. There are numerous benefits to using it, such as improved application performance and enhanced responsiveness.
+
+2. What is the difference between a thread and a process?
+    A process is an independently running instance of a program. If you open a same program multiple times, multiple processes will be utilized. These processes in an operating system share system resources such as memory and CPUs (processors) and when one program is waiting for some operation, another can utilize the resources.
+
+    A thread is the unit of execution within a process. A process can have anywhere from just one thread to many threads.
+
+    When a process starts, it is assigned memory and resources. Each thread in the process shares that memory and resources. In single-threaded processes, the process contains one thread. The process and the thread are one and the same, and there is only one thing happening.
+
+3. Explain the Producer-Consumer problem? 
+    The Producer-Consumer problem is a classic problem this is used for multi-process synchronization i.e. synchronization between more than one processes.
+    The problem is :-
+        The producer should produce data only when the buffer is not full. If the buffer is full, then the producer shouldn't be allowed to put any data into the buffer.
+        The consumer should consume data only when the buffer is not empty. If the buffer is empty, then the consumer shouldn't be allowed to take any data from the buffer.
+        The producer and consumer should not access the buffer at the same time.
+
+    Solution is :-
+        Multi-threading solutions (those on Wikipedia) are the easier to implement. You will need concurrency control system like semaphores or monitor. There is even a lock-free solution when having a single consumer and producer.
+
+4. What is deadlock and four necessary conditions for deadlock?
+    A condition that occurs when two or more processes are waiting for the other to complete before proceeding. The result is that both processes hang. Deadlocks occur most commonly in multitasking and client/server environments.
+    Conditions to achieve deadlock are :-
+        Mutual Exclusion — At least one resource must be held in a non-sharable mode; If any other process requests this resource, then that process must wait for the resource to be released.
+
+        Hold and Wait — A process must be simultaneously holding at least one resource and waiting for at least one resource that is currently being held by some other process.
+
+        No preemption — Once a process is holding a resource, that resource cannot be taken away from that process until the process voluntarily releases it.
+
+        Circular Wait — A set of processes must exist such that every process is waiting for the next. ( Note: circular wait is an extension of Hold and Wait).
+
+5. Explain the implementation of Virtual memory?
+    Virtual Memory is a space where large programs can store themselves in form of pages while their execution and only the required pages or portions of processes are loaded into the main memory. This technique is useful as large virtual memory is provided for user programs when a very small physical memory is there.
+    Virtual memory is implemented using Demand Paging or Demand Segmentation:-
+    Demand Paging :
+    The process of loading the page into memory on demand (whenever page fault occurs) is known as demand paging.
+
+    Demand segmentation:
+    allows for pages that are often referenced with each other to be brought into memory together, this decreases the number of page faults.
+
+6. What is Cache? 
+    Caching is the process of storing data in the cache. The cache is a temporary storage area relatively small in size with faster access time. Whenever your application has to read data it should first try to retrieve the data from the cache. Only if it’s not found in the cache then it should try to get the data from the data store. Caching improves latency and can reduce the load on your servers and databases.
+    Cache can be implemented atr various levels:-
+    Client Caching
+    CDN Caching
+    Web Server Caching
+    Database Caching
+    Application Caching
+
+7. Where does cache lie in an Operating System?
+    Cache memory is an intermediate form of storage between the registers (located inside the processor and directly accessed by the CPU) and the RAM.
+    Cache memory is important because it improves the efficiency of data retrieval. It stores program instructions and data that are used repeatedly in the operation of programs or information that the CPU is likely to need next.
+
+8. Difference between Cache and HashMap?
+    Cache memory is sometimes called CPU (central processing unit) memory because it is typically integrated directly into the CPU chip or placed on a separate chip that has a separate bus interconnect with the CPU. Therefore, it is more accessible to the processor, and able to increase efficiency, because it's physically close to the processor.
+
+    A hashmap is a storage place where we want to keep all of the data. So building upon this, we might want to add data, retrieve data or manipulate data.
+
+9. What are the properties of RDBMS? 
+    Most common use of RDBMS is to implement simple CRUD – Create, Read, Update, and Delete – functionality.
+
+    Provides data to be stored in tables
+
+    Persists data in the form of rows and columns
+
+    Provides facility primary key, to uniquely identify the rows
+
+    Creates indexes for quicker data retrieval
+
+    Provides a virtual table creation in which sensitive data can be stored and simplified query can be applied.(views)
+
+    Sharing a common column in two or more tables(primary key and foreign key)
+
+    Provides multi user accessibility that can be controlled by individual users.
+
+10. What are ACID properties? 
+    Atomicity states that a transaction must be treated as an atomic unit, that is, either all of its operations are executed or none. There must be no state in a database where a transaction is left partially completed.
+
+    Consistency states that the database integrity constraints must be maintained so that the database is consistent before and after the transaction. It ensures that the transaction can bring the database from one valid state to another valid state
+
+    Isolation ensures that multiple transactions can occur concurrently without leading to inconsistency of database state. Transactions occur independently without interference. Changes occurring in a particular transaction will not be visible to any other transaction until that particular change in that transaction is written to memory or has been committed
+
+    Durability ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even is system failure occurs. These updates now become permanent and are stored in a non-volatile memory.
+
+11. Difference between Vertical and Horizontal Scaling.
+    Horizontal scaling means that you scale by adding more machines into your pool of resources whereas Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing machine.
+    With horizontal-scaling it is often easier to scale dynamically by adding more machines into the existing pool - Vertical-scaling is often limited to the capacity of a single machine, scaling beyond that capacity often involves downtime and comes with an upper limit.
+
+12. What is sharding?
+    Database sharding is the process of splitting up a database across multiple machines to improve the scalability of an application. In Sharding, one’s data is broken into two or more smaller chunks, called logical shards. The logical shards are then distributed across separate database nodes, referred to as physical shards.
+    Database shards are autonomous and they don’t share any of the same data or computing resources. In some cases, though, it makes sense to replicate certain tables into each shard to serve as referenced tables.
+    Sharding is necessary if a dataset is too large to be stored in a single database. Moreover, many sharding strategies allow additional machines to be added. Sharding allows a database cluster to scale along with its data and traffic growth. Sharding is also referred as horizontal partitioning
+
+13. What is the CAP theorem? 
+    CAP stands for Consistency, Availability and Pratition Tolerance.
+    Consistency (C ): All nodes see the same data at the same time. What you write you get to read.
+
+    Availability (A): A guarantee that every request receives a response about whether it was successful or failed. Whether you want to read or write you will get some response back.
+
+    Partition tolerance (P): The system continues to operate despite arbitrary message loss or failure of part of the system. Irrespective of communication cut down among the nodes, system still works.
+
+14. What is normalization and denormalization and why do we need it? 
+    Data living in one or many locations has important consequences for accuracy and speed. If data lives in one source location (i.e., is normalized), it must be summarized with other data to be useful. If data is summarized in multiple locations (i.e., is denormalized), when it’s updated, it will be out of sync for some time before each location can be changed.
+    For speedy delivery of data, it’s best to take your normalized data and derive a denormalized ready-to-consume form from it. This denormalized form doesn’t need to be perfect, just fast. The perfection is still sustained in the normalized form.
+
+15. Difference between inner and outer join? 
+    Both inner and outer joins can be used to combine data from two or more tables.
+    Though both inner and outer joins include rows from both tables when the match condition is successful, they differ in how they handle a false match condition.
+
+    Inner joins don’t include non-matching rows; whereas, outer joins do include them.
+
+16. What is the difference between TCP and UDP? Explain their use.
+    When you request a web page in your browser, your computer sends TCP packets to the web server’s address, asking it to send the web page back to you. The web server responds by sending a stream of TCP packets, which your web browser stitches together to form the web page. When you click a link, sign in, post a comment, or do anything else, your web browser sends TCP packets to the server and the server sends TCP packets back.
+    UDP: -
+    small packet sizes than TCP by about 60%
+    UDP header 20 bytes
+    TCP header 80 bytes
+    Connectionless: No connection to create and maintain
+    You dont have to create connection first before sending out data
+    You have more control of when data is being sent out
+
+    TCP:-
+        Retransmission
+        In-order delivery
+        Congestion Control
+        Error Detection
+
+17. What is the difference between http and https? 
+    HTTP:-
+        Now when you hit enter to access the URL you have typed in, its this HTTP that carries the web address to the World Wide Web and looks up the URL to access all the files and resources related to that webpage. Once the background search is completed, the tirelessly working HTTP brings the results to your screen. 
+
+    HTTPS:-
+        HTTPS has been around since the very beginning of the internet. It has not received its fair share of attention until recently but that does not undermine the role it plays. As we learnt earlier, S stands for secure. This means, that HTTPS has a wider role than that of HTTP. HTTPS not only communicates with the WWW or the internet, it also makes sure that all the communications are encrypted or “Secure”.
+
+18. What are ports? Name some default port of your favourite database.
+    A computer port is a type of electronic, software- or programming-related docking point through which information flows from a program on your computer or to your computer from the Internet or another computer in a network. (A network, by the way, is a series of computers that are physically or electronically linked.)
+
+    In computer terms, a computer or a program connects to somewhere or something else on the Internet via a port. Port numbers and the user's IP address combine into the "who does what" information kept by every Internet Service Provider.
+
+    mongodb port - 27017
+    postgres port - 5432
+    mysql - 3306
+
+19. Explain DNS. 
+    Domain Name Servers (DNS) is an amazing technology that helps us open internet addresses without a hustle. At its basic, DNS is the Internet’s equivalent of a phone book. They maintain a directory of domain names and translate them to Internet Protocol (IP) addresses.
+    The primary function of DNS is name resolution. It’s an architecture that maps names to addresses so that when a user tries to access another computer on a network, it directs him there.
+
+20. Explain firewall
+    A firewall is a framework that gives arrange security by separating the approaching an active system movement in view of an arrangement of client characterized rules. As a rule, the motivation behind a firewall is to lessen or dispense with the event of undesirable system correspondences while enabling all genuine correspondence to stream uninhibitedly. In most server frameworks, firewalls give a basic layer of security that, joined with different measures, keep assailants from getting to your servers in vindictive ways.
+
+21. Explain CAP theorem 
+    Already answered
+
+22. What is Sharding, When it is used?
+    Already answered
+
+23. What is a load balancer?  How it is useful
+    Load balancing is dividing the amount of work that a computer has to do between two or more computers so that more work gets done in the same amount of time and, in general, all users get served faster.
+    The main purpose of load balancing is to prevent any single server from getting overloaded and possibly breaking down. In other words, load balancing improves service availability and helps prevent downtimes.
+
+24. What is Encryption and hashing?
+    In computing, encryption is the method by which plain text or any other type of data is converted from a readable form to an encoded version that can only be decoded by another entity if they have access to a decryption key. Encryption is one of the most important methods for providing data security, especially for end-to-end protection of data transmitted across networks.
+
+    A hash function is where a computer takes an input of any length and content (e.g. letters, numbers, and symbols) and uses a mathematical formula to chop it, mix it up, and produce an output of a specific length.There are lots of different mathematical formula you can use to produce hashes
+
+25. What is oauth2?
+    As an authorization framework enabling applications to access resources from all kinds of services, it is widely used on the web. Currently OAuth has two versions of protocols, OAuth 1.0 (RFC 5849) and OAuth 2.0 (RFC 6749). This guide focuses on the 2.0 version. Essentially, OAuth 2.0 allows arbitrary clients (for example, a first-party iOS application or a third-party web application) to access user’s (resource owner’s) resources on resource servers via authorization servers in a secure, reliable, and efficient manner.
+    OAuth 2.0 specification defines 4 types of authorization flows:
+        Authorization Code
+
+        Resource Owner Password Credentials
+
+        Implicit
+
+        Client Credentials
