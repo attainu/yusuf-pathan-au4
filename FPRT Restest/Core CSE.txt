@@ -1,0 +1,74 @@
+1. Difference between fork() and exec() ?
+   - Fork operation is used to create a duplicate of the original process and it is referred to as child and the original process as parent.
+   - exec operation rather works opposite to the fork call, it replaces the original process with a new one.
+   - fork call usually means copying all the data from the original one to the new one and thus they end up sharing the same memory, while in case of exec call the original one is replaced with a new one i.e. no connection between the parent process and the newly created child process.
+
+2. What is context Switching?
+   - Context Switching refers to running of multiple tasks simultaneously without conflicting with one another.
+   - It does the process of allowing multiple processes to run simultaneously is achieved by stopping a task or process and saving its state then starting another process. 
+   - Once a task is stopped and another task is initiated, it doesn't mean another one would start rather its state is restored later and is resumed again.
+   - Context Switching is most probably used for sharing the same CPU at a single time and allowing multitasking.
+
+3. What are the valid deadlock prevention schemes?
+   - Deadlock prevention can be achieved by following below described 4 techniques.
+        a. Mutual exclusion - This method recommends that the shareable resource should be accessed by a single process at a time. Ex:- Printer.
+        b. Hold and wait - This method refers to as giving the process a resource which is going to be needed by it during processing. So the hold and wait condition of the resource doesn't arises. But then it locks the resource with the process till the process has finished its task.
+        c. No Preemption - This method means the process holding the resource can only release it voluntarily and no high priority task can snatch that resource from it.
+        d. Circular Wait - This method describes the cycle of waiting for the resource to set free by a earlier process. This means that a process is waiting for a resource to set free by a earlier process and that process could be waiting for an earlier process and this creates a circular wait.
+
+4. What is the Seven Layer Reference OSI Model and what are its uses?
+   - OSI(Open Systems Interconnection) model is used to see how the data is transmissioning over the network.
+   - The transmission of data is then distributed over 7 network layers in which each network layer has its own responsibility.
+   - Seven Layers are:
+        a. physical
+        b. data link 
+        c. network
+        d. transport
+        e. Session 
+        f. presentation
+        g. application
+   - OSI model was basically created because to set and know the difference between layers and their functioning.
+   - Like physical layer is used for raw bits transmission whereas application layer contains protocols related to user.
+   - Thus, to understand the various transmission of data going on OSI model was created to understand the various layers easily.
+
+5. What are Content Delivery Networks?
+   - Content Delivery Networks means a distributed network worldwide or globally which provides the data or contents of the web to the clients based on the geographical location.
+   - Content Delivery Networks were created to ease out the load on server which is created by too many requests from clients.
+   - For example:- Suppose there is a single server globally which provides contents of the web to the clients as per the request. But, when a large number of clients requests the serve for information it created the load on server. The clients could be of any geographical location.
+   - Thus, to ease out the load on server many distributed networknare created which helps the balancing the load on server.
+   - It works in this way that suppose a American client is trying to access google.com, then the server which will be responding to that client's request would be of that particular geographical region, and not of any other region like asia's server responding to that client.
+   Content Delivery Networks is now used worldwide and many big techs use it like Facebook.
+
+6. What are normalization and denormalization and why do we need it?
+   - Normalization refers to storing non-redundant data into the database and thus removing the non essential data from the tables.
+   - Denormalization refers to storing all types of data including the redundant data into a single table so that the query made is processed faster.
+   - Normalization and Denormalization is basically needed so that user can use the database fastly and values stored into the tables are the required ones.
+   - Both the processes help the user in a way such that, suppose when a user has only crud operations to do like update, delete, create, search then the normalization is better as it removes out the redundant non-essential data.
+   - But suppose when a user wants the query like to read data to be processed then the denormalization works as it helps to increase the performance to read the data and compromising on other factors like writng, grouping ,etc.
+   - Thus, both the processes needed but according the needs are utilized here and there. 
+
+7. What are the different types of JOIN in DBMS?
+   - A JOIN clause is basically used when the user wants the data from the database using a common column between two tables and the tables are joined using that similar column in both the tables.
+   - There are basically 4 types of joins in database Management System:-
+        a. Inner join or normally join - This join is used when the user wants the matching fields a dataset from both the tables. It means that common fields from both the tables will be displayed as a result.
+        b. Left join - It is used when the user wants to join the tables and display al the values of the left table but the values of right table are only shown if match is found else null is shown in the resultant table.
+        c. Right join - This join is very much similar to the left join but instead of showing all values of left table, all values of right table are shown in the result table and matching values of left table or null.
+        d. Full join - It is used when the user wants the result in the form of combination of left join and right join and the resultant table of both the results.
+
+8. What is the difference b/w private IP and Public IP?
+   - Private IP address is the address which is used to communicate within the same network.
+   - Public IP address is used globally like which is exposed to the internet. 
+   -Private IP is basically assigned to the systems more confined to the particular area and doesn't want to be exposed online or internet. example - office
+   -Public IP on other hand is like a postal address to find that particular system using that IP address and thus is exposed to the internet. 
+
+9. Difference between semaphore and mutex?
+   - Semaphore and Mutex are basically used for multitasking process.
+   - Semaphore is a process where a process is waiting for a resource as the the resource is being used by another process. 
+   - As soon as the earlier process finishes it's task with the resource the next process is signaled for the resource to be used.
+   - Mutex on other hand controls the processes accessing the resources. It means that which process should access the resource is watched by mutex.
+   - Mutex allows only one thread or process to access the resource and thus semaphore is a more complex type of mutex only. 
+
+10. Difference between TCP and UDP?
+- TCP protocol works on principles of when the data transmission between the sender and receiver is to happen then before that a connection should be established between them and when the transmission is over the connection should be closed.
+- In case odf UDP protocol, the transmission of data doesn't need to follow any protocols before transmitting the data like opening and closing the connection, thus used for broadcast signals.
+- As TCP has some protocols to maintain like opening and closing the connection, its performance time relatively slower to UDP as there is no protocols of opening and closing to maintain.  
